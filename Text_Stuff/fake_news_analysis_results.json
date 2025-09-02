@@ -1,0 +1,36 @@
+[
+  {
+    "url": "https://example.com/real-news-1",
+    "title": "COVID-19 vaccines have been proven safe and effective",
+    "analysis": {
+      "prediction": "FAKE",
+      "confidence": 0.8926871418952942,
+      "probabilities": {
+        "FAKE": 0.8926871418952942,
+        "REAL": 0.1073128953576088
+      },
+      "text_preview": "COVID19 vaccines have been proven safe and effective. Multiple clinical trials have shown that COVID19 vaccines are safe and effective at preventing severe illness and death from the virus. Millions o..."
+    },
+    "source_data": {
+      "text_preview": "COVID-19 vaccines have been proven safe and effective. Multiple clinical trials have shown that COVID-19 vaccines are safe and effective at preventing severe illness and death from the virus. Millions...",
+      "text_length": 268
+    }
+  },
+  {
+    "url": "https://example.com/fake-news-1",
+    "title": "5G towers are causing the spread of coronavirus",
+    "analysis": {
+      "prediction": "FAKE",
+      "confidence": 0.9978164434432983,
+      "probabilities": {
+        "FAKE": 0.9978164434432983,
+        "REAL": 0.0021835328079760075
+      },
+      "text_preview": "5G towers are causing the spread of coronavirus. There is no scientific evidence that 5G towers cause or spread COVID19. The virus spreads through respiratory droplets, not radio waves. This claim has..."
+    },
+    "source_data": {
+      "text_preview": "5G towers are causing the spread of coronavirus. There is no scientific evidence that 5G towers cause or spread COVID-19. The virus spreads through respiratory droplets, not radio waves. This claim ha...",
+      "text_length": 244
+    }
+  }
+]

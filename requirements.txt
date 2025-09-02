@@ -1,0 +1,33 @@
+# Core HTTP and parsing
+requests
+httpx
+beautifulsoup4
+lxml
+readability-lxml
+markdownify
+
+# Scraping/content extraction
+trafilatura
+newspaper3k
+
+# NLP / ML
+nltk
+spacy
+wikipedia
+transformers
+torch
+
+# Utilities
+python-dotenv
+boto3
+pillow
+tiktoken
+
+# Image evaluator (Strands + tools)
+strands-agents
+strands-agents-tools
+serpapi
+readabilipy
+
+# Optional helpers used transitively
+dateparser

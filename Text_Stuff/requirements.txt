@@ -1,0 +1,8 @@
+transformers==4.35.0
+torch==2.0.1
+spacy==3.7.2
+sentence-transformers==2.2.2
+requests==2.31.0
+numpy==1.24.3
+tqdm==4.66.1
+beautifulsoup4==4.12.2

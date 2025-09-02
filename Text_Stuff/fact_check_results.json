@@ -1,0 +1,100 @@
+{
+  "input_url": "https://example.com",
+  "canonical_url": "https://example.com",
+  "fact_check_results": [
+    {
+      "claim": "Albert Einstein developed the theory of relativity",
+      "source": "Wikipedia",
+      "confidence": 0.5,
+      "verdict": "SUPPORTED",
+      "evidence": [
+        "Found supporting information in Wikipedia: Theory of relativity"
+      ],
+      "wikipedia_page": "Theory of relativity",
+      "similarity_score": 0.5,
+      "timestamp": "2025-09-01T02:14:51.378154"
+    },
+    {
+      "claim": "Albert Einstein was a German-born theoretical physicist who developed the theory of relativity.",
+      "source": "Wikipedia",
+      "confidence": 0.46153846153846156,
+      "verdict": "SUPPORTED",
+      "evidence": [
+        "Found supporting information in Wikipedia: Albert Einstein"
+      ],
+      "wikipedia_page": "Albert Einstein",
+      "similarity_score": 0.46153846153846156,
+      "timestamp": "2025-09-01T02:14:52.330325"
+    },
+    {
+      "claim": "He was born in 1879 and died in 1955.",
+      "source": "Wikipedia",
+      "confidence": 0.25,
+      "verdict": "NEUTRAL",
+      "evidence": [
+        "Some related information found but not conclusive: 1879 in art"
+      ],
+      "wikipedia_page": "1879 in art",
+      "similarity_score": 0.25,
+      "timestamp": "2025-09-01T02:14:54.576344"
+    },
+    {
+      "claim": "The theory of relativity consists of two theories: special relativity and general relativity.",
+      "source": "Wikipedia",
+      "confidence": 0.36363636363636365,
+      "verdict": "SUPPORTED",
+      "evidence": [
+        "Found supporting information in Wikipedia: Relativity of simultaneity"
+      ],
+      "wikipedia_page": "Relativity of simultaneity",
+      "similarity_score": 0.36363636363636365,
+      "timestamp": "2025-09-01T02:14:57.237556"
+    },
+    {
+      "claim": "Einstein's famous equation E=mc\u00b2",
+      "source": "Wikipedia",
+      "confidence": 0.25,
+      "verdict": "NEUTRAL",
+      "evidence": [
+        "Some related information found but not conclusive: Albert Einstein"
+      ],
+      "wikipedia_page": "Albert Einstein",
+      "similarity_score": 0.25,
+      "timestamp": "2025-09-01T02:14:58.427564"
+    },
+    {
+      "claim": "Einstein equation",
+      "source": "Wikipedia",
+      "confidence": 0.5,
+      "verdict": "SUPPORTED",
+      "evidence": [
+        "Found supporting information in Wikipedia: Einstein field equations"
+      ],
+      "wikipedia_page": "Einstein field equations",
+      "similarity_score": 0.5,
+      "timestamp": "2025-09-01T02:15:00.663393"
+    },
+    {
+      "claim": "Shows Einstein's mass-energy equivalence formula",
+      "source": "Wikipedia",
+      "confidence": 0.4,
+      "verdict": "SUPPORTED",
+      "evidence": [
+        "Found supporting information in Wikipedia: Mass\u2013energy equivalence"
+      ],
+      "wikipedia_page": "Mass\u2013energy equivalence",
+      "similarity_score": 0.4,
+      "timestamp": "2025-09-01T02:15:05.438521"
+    }
+  ],
+  "statistics": {
+    "total_claims": 7,
+    "supported": 5,
+    "refuted": 0,
+    "neutral": 2,
+    "not_found": 0,
+    "average_confidence": 0.38931068931068935,
+    "reliability_score": 0.7142857142857143
+  },
+  "timestamp": "2025-09-01T02:15:05.438545"
+}

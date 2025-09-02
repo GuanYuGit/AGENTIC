@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+scraper_output.json
+scraper_images.json
+scraper_images_evaluation.json
+fake_news_analysis.json
+wiki_fact_check_results.json
+news_validity_summary.json
+build/

@@ -1,0 +1,19 @@
+{
+    "agent_role": "ingestion-first-agent",
+    "input_url": "https://bbc.com/news/science",
+    "artifacts": {
+      "text": {
+        "title": "NASA Confirms Successful Asteroid Deflection Test",
+        "chunks": [
+          {
+            "id": "t1",
+            "text": "NASA's DART spacecraft successfully changed the trajectory of an asteroid in a test of planetary defense technology. The mission demonstrates humanity's capability to protect Earth from potential asteroid impacts."
+          },
+          {
+            "id": "t2",
+            "text": "Scientists confirmed that the impact altered the asteroid's orbit by 32 minutes, far exceeding the minimum requirement of 73 seconds. This marks a significant milestone in planetary defense efforts."
+          }
+        ]
+      }
+    }
+  }
