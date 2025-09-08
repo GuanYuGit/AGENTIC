@@ -1,6 +1,6 @@
 from strands import Agent
 from strands.models import BedrockModel
-from tools import serpapi_search, sensity_check
+from tools import serpapi_search
 from dotenv import load_dotenv
 import boto3
 
@@ -26,7 +26,6 @@ You are an AI agent that evaluates the authenticity of images.
 You have the following tools available:
 
 - serpapi_search(image_url: str) → Returns a Python list of dictionaries with reverse image search results.
-- sensity_check(image_url: str) → Returns a Python list of dictionaries with deepfake detection info.
 
 For every image URL provided:
 
@@ -42,8 +41,7 @@ The Python list-of-dicts format:
         "image_url": "<original image URL>",
         "tools_called": ["serpapi_search", "sensity_check"],
         "tool_results": {
-            "serpapi_search": <Python list of dicts from serpapi_search>,
-            "sensity_check": <Python list of dicts from sensity_check>
+            "serpapi_search": <Python list of dicts from serpapi_search>
         },
         "assessment": <float 0.0 to 1.0>,
         "evidence": "<short paragraph explaining your reasoning based on the tools>"
@@ -67,7 +65,7 @@ Input: https://i.imgur.com/5bGzZi7.jpg
 Tool call in Python:
 serpapi_search("https://i.imgur.com/5bGzZi7.jpg")
 """,
-    tools=[serpapi_search, sensity_check],
+    tools=[serpapi_search],
 )
 
 # 5. Function to call from orchestrator

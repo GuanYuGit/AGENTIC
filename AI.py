@@ -11,10 +11,10 @@ from botocore.exceptions import ClientError
 load_dotenv(".env")
 
 # Paths to analysis files
-FAKE_NEWS_FILE = Path("/Users/guanyu/AGENTIC/fake_news_analysis.json")
-IMAGE_EVAL_FILE = Path("/Users/guanyu/AGENTIC/scraper_images_evaluation.json")
-WIKI_FACT_CHECK_FILE = Path("/Users/guanyu/AGENTIC/wiki_fact_check_results.json")
-OUTPUT_FILE = Path("/Users/guanyu/AGENTIC/news_validity_summary.json")
+FAKE_NEWS_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/fake_news_analysis.json")
+IMAGE_EVAL_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/scraper_images_evaluation.json")
+WIKI_FACT_CHECK_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/wiki_fact_check_results.json")
+OUTPUT_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/news_validity_summary.json")
 
 # Load JSON files
 with open(FAKE_NEWS_FILE, "r", encoding="utf-8") as f:
@@ -62,7 +62,7 @@ for url in fake_news_data:
     article_image_eval = image_data.get(url, {})
     images_summary = f"Image evaluations: {json.dumps(article_image_eval, indent=0)}"
 
-    prompt = f"""
+    prompt = ffinal_prompt = f"""
 You are to act as a news validity assessor.
 
 Here is the information for an article ({url}):
@@ -71,8 +71,31 @@ Here is the information for an article ({url}):
 2. Wikipedia fact-check results: {json.dumps(wiki_entry, indent=0)}
 3. Image evaluation data: {images_summary}
 
-Based on these sources, give a concise summary (max 100 words) that states whether the news is likely REAL, FAKE, or MIXED, and explain your reasoning.
+Your task:
+- Provide a **single clear verdict in one line**: REAL, FAKE, MIXED, or MISLEADING, with a short one-liner explanation.
+- Give a **short description (1 to 3 bullet points)** of what the article is about.
+- Then list the **evidence supporting the article being real**.
+- Then list the **evidence suggesting it could be fake or misleading**.
+- Ignore any irrelevant information or empty/failed checks (do not display “no data” or “error” messages).
+- Keep everything in **concise bullet points**.
+
+Format your output EXACTLY like this:
+
+Verdict: [REAL/FAKE/MIXED/MISLEADING] – [short one-liner explanation]
+
+Details Supporting Real News:
+- [Point 1]
+- [Point 2]
+
+Details Suggesting Fake/Misleading News:
+- [Point 1]
+- [Point 2]
+
+Only include bullet points if there is meaningful evidence. If no evidence for a section, leave it empty.
+
+Keep the response concise, structured, and easy to digest.
 """
+
 
     try:
         result = ask_claude(prompt)

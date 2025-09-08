@@ -7,8 +7,8 @@ import json
 from pathlib import Path
 
 # Set JSON output file paths
-OUTPUT_FILE = Path("/Users/guanyu/AGENTIC/scraper_output.json")
-IMAGES_FILE = Path("/Users/guanyu/AGENTIC/scraper_images.json")
+OUTPUT_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/scraper_output.json")
+IMAGES_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/scraper_images.json")
 
 def scrape_url(url: str) -> dict:
     """

@@ -159,8 +159,8 @@ class ContextFactChecker:
 
 # -------------------- Script to analyze scraper_output.json --------------------
 if __name__ == "__main__":
-    SCRAPER_JSON = Path("/Users/guanyu/AGENTIC/scraper_output.json")
-    OUTPUT_JSON = Path("/Users/guanyu/AGENTIC/wiki_fact_check_results.json")
+    SCRAPER_JSON = Path("/Users/wongk/Desktop/simplyN/AGENTIC/scraper_output.json")
+    OUTPUT_JSON = Path("/Users/wongk/Desktop/simplyN/AGENTIC/wiki_fact_check_results.json")
 
     if not SCRAPER_JSON.exists():
         raise FileNotFoundError(f"{SCRAPER_JSON} not found.")
