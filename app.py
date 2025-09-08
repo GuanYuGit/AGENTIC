@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 # Path to your orchestrator
-PROJECT_ROOT = Path("/Users/wongk/Desktop/simplyN/AGENTIC")
+PROJECT_ROOT = Path("/Users/guanyu/AGENTIC")
 ORCHESTRATOR = PROJECT_ROOT / "orchestrator.py"
 FINAL_SUMMARY_OUTPUT = PROJECT_ROOT / "news_validity_summary.json"
 

@@ -23,6 +23,9 @@ boto3
 pillow
 tiktoken
 
+# Streamlit UI
+streamlit
+
 # Image evaluator (Strands + tools)
 strands-agents
 strands-agents-tools

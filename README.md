@@ -21,6 +21,7 @@ An orchestrated pipeline that:
 - macOS or Linux with Python 3.12+
 - An AWS account with Bedrock access (Claude model) and credentials available to `boto3`
 - A SerpAPI key for reverse image search (used by Strands tools)
+- Streamlit (for optional web UI)
 
 ### Environment variables (.env)
 Create an `.env` file at the project root with:
@@ -50,6 +51,22 @@ for r in ["punkt", "stopwords"]:
 print("NLTK ready")
 PY
 ```
+
+### Streamlit UI
+A simple chat-like Streamlit UI is available in `app.py`.
+
+Note: Ensure the project paths in `app.py` point to your local project root. If needed, edit:
+```
+PROJECT_ROOT = Path("/Users/guanyu/AGENTIC")
+```
+
+Run the UI:
+```bash
+source /Users/guanyu/AGENTIC/venv/bin/activate
+streamlit run app.py
+```
+
+Usage: paste a URL into the chat input. The UI runs the orchestrator and displays the final summary.
 
 ### Run the orchestrator
 Provide a URL interactively or via argument. The script prints final summaries to the terminal and saves all JSONs.
