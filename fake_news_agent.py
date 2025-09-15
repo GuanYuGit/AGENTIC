@@ -99,8 +99,8 @@ class FakeNewsAgent:
 # -------------------- Script to analyze JSON --------------------
 if __name__ == "__main__":
     # Paths
-    SCRAPER_JSON = Path("/Users/wongk/Desktop/simplyN/AGENTIC/scraper_output.json")
-    OUTPUT_JSON = Path("/Users/wongk/Desktop/simplyN/AGENTIC/fake_news_analysis.json")
+    SCRAPER_JSON = Path("/Users/guanyu/AGENTIC/scraper_output.json")
+    OUTPUT_JSON = Path("/Users/guanyu/AGENTIC/fake_news_analysis.json")
 
     # Load scraped articles
     if not SCRAPER_JSON.exists():

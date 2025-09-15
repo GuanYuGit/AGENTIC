@@ -11,10 +11,10 @@ from botocore.exceptions import ClientError
 load_dotenv(".env")
 
 # Paths to analysis files
-FAKE_NEWS_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/fake_news_analysis.json")
-IMAGE_EVAL_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/scraper_images_evaluation.json")
-WIKI_FACT_CHECK_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/wiki_fact_check_results.json")
-OUTPUT_FILE = Path("/Users/wongk/Desktop/simplyN/AGENTIC/news_validity_summary.json")
+FAKE_NEWS_FILE = Path("/Users/guanyu/AGENTIC/fake_news_analysis.json")
+IMAGE_EVAL_FILE = Path("/Users/guanyu/AGENTIC/scraper_images_evaluation.json")
+WIKI_FACT_CHECK_FILE = Path("/Users/guanyu/AGENTIC/wiki_fact_check_results.json")
+OUTPUT_FILE = Path("/Users/guanyu/AGENTIC/news_validity_summary.json")
 
 # Load JSON files
 with open(FAKE_NEWS_FILE, "r", encoding="utf-8") as f:

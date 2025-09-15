@@ -18,7 +18,7 @@ from langgraph.graph import StateGraph
 from collections.abc import Mapping
 
 
-PROJECT_ROOT = Path("/Users/wongk/Desktop/simplyN/AGENTIC")
+PROJECT_ROOT = Path("/Users/guanyu/AGENTIC")
 
 
 def run_subprocess(script: Path, *args) -> Dict[str, Any]:
