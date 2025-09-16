@@ -3,8 +3,8 @@ from pathlib import Path
 from image_agent import evaluate_image
 
 # Paths to input and output files
-IMAGES_FILE = Path("/Users/guanyu/AGENTIC/scraper_images.json")
-OUTPUT_FILE = Path("/Users/guanyu/AGENTIC/scraper_images_evaluation.json")
+IMAGES_FILE = Path("scraper_images.json")
+OUTPUT_FILE = Path("scraper_images_evaluation.json")
 
 # Load image URLs from JSON
 if not IMAGES_FILE.exists():

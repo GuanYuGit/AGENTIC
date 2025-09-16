@@ -2,10 +2,18 @@ import streamlit as st
 import subprocess
 import sys
 import json
+import os
 from pathlib import Path
 
-# Path to your orchestrator
-PROJECT_ROOT = Path("/Users/guanyu/AGENTIC")
+# Load secrets and set environment variables
+secrets = st.secrets
+os.environ["AWS_ACCESS_KEY_ID"] = secrets["AWS_ACCESS_KEY_ID"]
+os.environ["AWS_SECRET_ACCESS_KEY"] = secrets["AWS_SECRET_ACCESS_KEY"]
+os.environ["AWS_REGION"] = secrets["AWS_REGION"]
+os.environ["SERPAPI_KEY"] = secrets["SERPAPI_KEY"]
+
+# Path to your orchestrator (use current directory for Streamlit Cloud)
+PROJECT_ROOT = Path.cwd()
 ORCHESTRATOR = PROJECT_ROOT / "orchestrator.py"
 FINAL_SUMMARY_OUTPUT = PROJECT_ROOT / "news_validity_summary.json"
 

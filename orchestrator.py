@@ -16,7 +16,7 @@ import json
 import subprocess
 from pathlib import Path
 
-PROJECT_ROOT = Path("/Users/guanyu/AGENTIC")
+PROJECT_ROOT = Path.cwd()
 
 # File paths used by downstream scripts
 SCRAPER_OUTPUT = PROJECT_ROOT / "scraper_output.json"
