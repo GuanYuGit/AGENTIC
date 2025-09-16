@@ -23,15 +23,17 @@ An orchestrated pipeline that:
 - A SerpAPI key for reverse image search (used by Strands tools)
 - Streamlit (for optional web UI)
 
-### Environment variables (.env)
-Create an `.env` file at the project root with:
-```
-# AWS credentials can also come from your standard AWS config/credential chain
-AWS_REGION=us-east-1
+### Environment variables
 
-# SerpAPI
+**For local development:** Create an `.env` file at the project root with:
+```
+AWS_ACCESS_KEY_ID=your_aws_access_key
+AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+AWS_REGION=us-east-1
 SERPAPI_KEY=your_serpapi_key
 ```
+
+**For Streamlit Cloud deployment:** Use the secrets management in your app settings instead of `.env` files.
 
 If you use Bedrock via default AWS environment/CLI profiles, explicit variables may not be required. `AI.py` uses `boto3` default resolution.
 

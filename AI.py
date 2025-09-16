@@ -7,8 +7,8 @@ import random
 from pathlib import Path
 from botocore.exceptions import ClientError
 
-# Load environment variables from .env file
-load_dotenv(".env")
+# Load environment variables from .env file (if it exists)
+load_dotenv(".env", override=False)
 
 # Paths to analysis files
 FAKE_NEWS_FILE = Path("fake_news_analysis.json")

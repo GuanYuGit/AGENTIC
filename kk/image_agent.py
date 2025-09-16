@@ -4,8 +4,8 @@ from tools import serpapi_search
 from dotenv import load_dotenv
 import boto3
 
-# 1. Load .env into environment so boto3 can use it
-load_dotenv()
+# 1. Load .env into environment so boto3 can use it (if it exists)
+load_dotenv(override=False)
 
 # 2. Create boto3 session to auto-pick credentials from env
 session = boto3.Session()
