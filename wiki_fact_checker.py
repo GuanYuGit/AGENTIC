@@ -26,6 +26,15 @@ try:
 except OSError:
     logger.warning("spaCy model not found. Install with: python -m spacy download en_core_web_sm")
     nlp = None
+    # Try to download the model automatically
+    try:
+        import subprocess
+        subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"], check=True)
+        nlp = spacy.load("en_core_web_sm")
+        logger.info("Successfully downloaded and loaded spaCy model")
+    except Exception as e:
+        logger.warning(f"Failed to download spaCy model: {e}")
+        nlp = None
 
 # nltk resources
 import nltk

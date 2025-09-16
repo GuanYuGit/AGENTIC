@@ -68,12 +68,16 @@ def main():
 
         # 4) Start image evaluation in background (runs while text checks execute)
         print("[4/5] Evaluating images in background...")
-        image_eval_process = subprocess.Popen(
-            [sys.executable, str(PROJECT_ROOT / "kk" / "agent_tester.py")],
-            stdout=subprocess.DEVNULL,  # ignore console output
-            stderr=subprocess.DEVNULL,  # ignore console errors
-            text=True
-        )
+        try:
+            image_eval_process = subprocess.Popen(
+                [sys.executable, str(PROJECT_ROOT / "kk" / "agent_tester.py")],
+                stdout=subprocess.PIPE,  # capture output for debugging
+                stderr=subprocess.PIPE,  # capture errors for debugging
+                text=True
+            )
+        except Exception as e:
+            print(f"Warning: Could not start image evaluation: {e}")
+            image_eval_process = None
 
         # 3a) Run Wikipedia fact checker while images are being evaluated
         print("[2/5] Running Wikipedia fact checker...")
@@ -88,7 +92,23 @@ def main():
             raise FileNotFoundError(f"Expected {FAKE_NEWS_OUTPUT} to be created.")
 
         # Wait for image evaluation to finish before aggregation
-        image_eval_process.wait()
+        if image_eval_process:
+            print("Waiting for image evaluation to complete...")
+            stdout, stderr = image_eval_process.communicate()
+            if image_eval_process.returncode != 0:
+                print(f"Image evaluation failed: {stderr}")
+                # Create empty image evaluation file to continue
+                with open(IMAGE_EVAL_OUTPUT, "w") as f:
+                    json.dump({}, f)
+                print("Created empty image evaluation file to continue...")
+            else:
+                print("Image evaluation completed successfully")
+        else:
+            print("Skipping image evaluation due to startup error")
+            # Create empty image evaluation file to continue
+            with open(IMAGE_EVAL_OUTPUT, "w") as f:
+                json.dump({}, f)
+        
         if not IMAGE_EVAL_OUTPUT.exists():
             raise FileNotFoundError(f"Expected {IMAGE_EVAL_OUTPUT} to be created.")
 
