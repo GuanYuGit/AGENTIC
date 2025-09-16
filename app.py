@@ -5,12 +5,17 @@ import json
 import os
 from pathlib import Path
 
-# Load secrets and set environment variables
-secrets = st.secrets
-os.environ["AWS_ACCESS_KEY_ID"] = secrets["AWS_ACCESS_KEY_ID"]
-os.environ["AWS_SECRET_ACCESS_KEY"] = secrets["AWS_SECRET_ACCESS_KEY"]
-os.environ["AWS_REGION"] = secrets["AWS_REGION"]
-os.environ["SERPAPI_KEY"] = secrets["SERPAPI_KEY"]
+# Load secrets and set environment variables (with fallbacks)
+try:
+    secrets = st.secrets
+    os.environ["AWS_ACCESS_KEY_ID"] = secrets.get("AWS_ACCESS_KEY_ID", "")
+    os.environ["AWS_SECRET_ACCESS_KEY"] = secrets.get("AWS_SECRET_ACCESS_KEY", "")
+    os.environ["AWS_REGION"] = secrets.get("AWS_REGION", "us-east-1")
+    os.environ["SERPAPI_KEY"] = secrets.get("SERPAPI_KEY", "")
+except Exception as e:
+    st.error(f"⚠️ Secrets not configured: {e}")
+    st.info("Please add your AWS and SerpAPI credentials in the Streamlit Cloud secrets section.")
+    st.stop()
 
 # Path to your orchestrator (use current directory for Streamlit Cloud)
 PROJECT_ROOT = Path.cwd()
