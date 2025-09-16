@@ -28,6 +28,10 @@ tiktoken
 # Streamlit UI
 streamlit
 
+# FastAPI for AWS deployment
+fastapi
+uvicorn
+
 # Image evaluator (Strands + tools)
 strands-agents
 strands-agents-tools
