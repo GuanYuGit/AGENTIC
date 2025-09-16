@@ -53,7 +53,7 @@ if url := st.chat_input("Paste a news article URL..."):
             )
 
             if completed.returncode != 0:
-                error_msg = f"❌ Error:\n{completed.stderr}"
+                error_msg = f"❌ Error (return code {completed.returncode}):\nSTDOUT:\n{completed.stdout}\nSTDERR:\n{completed.stderr}"
                 st.error(error_msg)
                 st.session_state.messages.append({"role": "assistant", "content": error_msg})
             else:
